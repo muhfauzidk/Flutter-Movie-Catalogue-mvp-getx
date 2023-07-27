@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_catalogue_mvp_getx/data/models/movie_model.dart';
 import 'package:movie_catalogue_mvp_getx/data/repositories/movie_repository.dart';
+import 'package:movie_catalogue_mvp_getx/screens/home/home_binding.dart';
 import 'package:movie_catalogue_mvp_getx/screens/home/home_contract.dart';
 
 class HomePresenter extends GetxController implements HomeContract {
-  final HomeContract _view;
-  HomePresenter(this._view);
+  HomePresenter(HomeBinding homeBinding);
 
   final ValueNotifier<List<MovieModel>> moviesNotifier = ValueNotifier([]);
   final ValueNotifier<int> totalMoviesNotifier = ValueNotifier(0);

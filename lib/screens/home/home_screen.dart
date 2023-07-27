@@ -5,6 +5,8 @@ import 'package:movie_catalogue_mvp_getx/screens/detail_movie/detail_movie_scree
 import 'package:movie_catalogue_mvp_getx/screens/home/home_presenter.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
