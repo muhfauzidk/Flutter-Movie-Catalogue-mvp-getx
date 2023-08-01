@@ -25,8 +25,8 @@ class HomePresenter extends GetxController implements HomeContract {
   @override
   void onClose() {
     super.onClose();
-    moviesNotifier.dispose(); // Dispose the ValueNotifier
-    totalMoviesNotifier.dispose(); // Dispose the ValueNotifier
+    moviesNotifier.dispose();
+    totalMoviesNotifier.dispose();
   }
 
   @override
@@ -51,7 +51,6 @@ class HomePresenter extends GetxController implements HomeContract {
 
   void fetchMovies(int totalMovies) async {
     showLoading();
-    Stopwatch stopwatch = Stopwatch()..start(); // Start the stopwatch
     try {
       final List<MovieModel> movies =
           await MovieRepository.fetchMovies(totalMovies);
@@ -59,9 +58,6 @@ class HomePresenter extends GetxController implements HomeContract {
     } catch (e) {
       showError('Error fetching movies');
     }
-    stopwatch.stop(); // Stop the stopwatch
-    print(
-        'fetchMovies execution time: ${stopwatch.elapsed.inMilliseconds} milliseconds');
 
     hideLoading();
   }

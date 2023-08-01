@@ -97,7 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
                 onSelected: (value) {
-                  print("Selected value: $value");
                   if (value == 0) {
                     increaseTitleFontSize();
                   } else if (value == 1) {
@@ -186,7 +185,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 final movie = filteredMovies[index];
                 return GestureDetector(
                   onTap: () {
-                    Stopwatch stopwatch = Stopwatch()..start();
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => MovieDetailScreen(
@@ -194,8 +192,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     );
-                    print(
-                        'Navigation duration: ${stopwatch.elapsedMilliseconds}ms');
                   },
                   child: Container(
                     padding: const EdgeInsets.all(12.0),
@@ -243,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class MovieSearchDelegate extends SearchDelegate<String?> {
-  final List<MovieModel>? movies; // Pass the list of movies to the delegate
+  final List<MovieModel>? movies;
 
   MovieSearchDelegate({this.movies});
 

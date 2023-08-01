@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_catalogue_mvp_getx/screens/home/home_binding.dart';
 import 'package:movie_catalogue_mvp_getx/screens/home/home_screen.dart';
+import 'package:dcdg/dcdg.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
